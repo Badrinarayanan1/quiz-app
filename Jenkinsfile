@@ -14,7 +14,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: 'main', 
-                    url: 'https://github.com/badrinarayanan1/quizroom-main.git',
+                    url: 'https://github.com/Badrinarayanan1/quiz-app.git',
                     credentialsId: 'github-creds'
 
             }
