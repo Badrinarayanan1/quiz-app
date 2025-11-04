@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quizroom-backend
+  labels:
+    app: quizroom-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quizroom-backend
+  template:
+    metadata:
+      labels:
+        app: quizroom-backend
+    spec:
+      containers:
+        - name: quizroom-backend
+          image: badrinarayanan1/quizroom-backend:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: "production"
