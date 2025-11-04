@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
@@ -16,8 +15,8 @@ export default defineConfig({
     allowedHosts: [
       'localhost',
       '127.0.0.1',
-      '.us-east-1.elb.amazonaws.com'  // ✅ allow AWS LoadBalancer hosts
-    ]
+      '.us-east-1.elb.amazonaws.com'
+    ],
   },
   preview: {
     host: '0.0.0.0',
@@ -25,7 +24,7 @@ export default defineConfig({
     allowedHosts: [
       'localhost',
       '127.0.0.1',
-      '.us-east-1.elb.amazonaws.com'  // ✅ same here
-    ]
-  }
+      '.us-east-1.elb.amazonaws.com'
+    ],
+  },
 })
