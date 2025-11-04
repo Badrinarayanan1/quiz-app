@@ -34,7 +34,8 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    const newSocket = io('http://localhost:3000');
+    const newSocket = io('http://abcd1234abcd.us-east-1.elb.amazonaws.com:3000');
+
     setSocket(newSocket);
 
     newSocket.on('connect', () => {
