@@ -39,13 +39,18 @@ pipeline {
             }
         }
 
-        stage('Deploy to EKS') {
+     stage('Deploy to EKS') {
             steps {
-                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: AWS_CREDENTIALS]]) {
+                withAWS(credentials: 'aws-creds', region: "$REGION") {
                     sh '''
-                    aws eks update-kubeconfig --region $REGION --name $CLUSTER_NAME
+                    echo "📦 Updating kubeconfig for EKS cluster..."
+                    aws eks update-kubeconfig --name $CLUSTER_NAME --region $REGION
+
+                    echo "🚀 Deploying to Kubernetes..."
                     kubectl set image deployment/quizroom-backend quizroom-backend=$BACKEND_IMAGE:latest --record || kubectl apply -f k8s/backend-deployment.yaml
                     kubectl set image deployment/quizroom-frontend quizroom-frontend=$FRONTEND_IMAGE:latest --record || kubectl apply -f k8s/frontend-deployment.yaml
+
+                    echo "✅ Deployment complete."
                     '''
                 }
             }
