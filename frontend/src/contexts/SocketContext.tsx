@@ -34,8 +34,15 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    const newSocket = io('http://localhost:3000');
-    setSocket(newSocket);
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
+  || `${window.location.protocol}//${window.location.hostname}:3000`;
+
+const newSocket = io(BACKEND_URL, {
+  transports: ['websocket'],  // More reliable across networks
+  autoConnect: true,
+});
+
+setSocket(newSocket);
 
     newSocket.on('connect', () => {
       setIsConnected(true);
