@@ -118,15 +118,3 @@ Go to [http://localhost:5173](http://localhost:5173) in your browser.
 - **Frontend:** React, TypeScript, Vite, Tailwind CSS, shadcn/ui
 - **Real-time:** Socket.IO
 
-
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
-## 📄 License - MIT License
-
----
-
-<div align="center">
-Made with ❤️ by Pavan Bhakta
-</div>
