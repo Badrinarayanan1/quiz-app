@@ -53,7 +53,7 @@ QuizRoom is a modern, real-time quiz application built with a TypeScript/Node.js
 ### 1. Clone the Repository
 
 ```sh
-git clone https://github.com/bPavan16/quizroom.git
+git clone https://github.com/Badrinarayanan1/quiz-app.git
 cd quizroom
 ```
 
