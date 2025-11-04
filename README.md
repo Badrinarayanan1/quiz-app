@@ -1,6 +1,6 @@
 # QuizRoom – Real-Time Quiz App
 
-QuizRoom is a modern, real-time quiz application built with a TypeScript/Node.js backend and a beautiful React + Tailwind CSS frontend using shadcn/ui components. It allows users to join quiz rooms, answer questions live, and see real-time leaderboards. Admins can create and control quizzes with ease.
+QuizRoom is a modern, real-time quiz application built with a TypeScript/Node.js backend and a beautiful React + Tailwind CSS frontend using shadcn/ui components. It allows users to join quiz rooms, answer questions live, and see real-time leaderboards. Admins can create and control quizzes with ease
 
 ## ✨ Features
 
